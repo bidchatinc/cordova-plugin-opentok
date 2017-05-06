@@ -98,7 +98,7 @@ static NSString * SID_S;
     //    [self.webView.superview addSubview:_publisher.view];
     [_publisher.view setFrame:CGRectMake(left, top, width, height)];
     if (zIndex>0) {
-        _publisher.view.layer.zPosition = 1;
+        _publisher.view.layer.zPosition = zIndex;
     }
     NSString* cameraPosition = [command.arguments objectAtIndex:8];
     if ([cameraPosition isEqualToString:@"back"]) {
@@ -121,7 +121,7 @@ static NSString * SID_S;
     if ([sid isEqualToString:@"TBPublisher"]) {
         NSLog(@"The Width is: %d", width);
         _publisher.view.frame = CGRectMake(left, top, width, height);
-        _publisher.view.layer.zPosition = 1;
+        _publisher.view.layer.zPosition = zIndex;
     }
 
     // Pulls the subscriber object from dictionary to prepare it for update
